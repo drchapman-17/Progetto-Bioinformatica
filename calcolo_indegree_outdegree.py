@@ -1,3 +1,5 @@
+import classe_per_km1mero
+
 def find_indegrees_and_outdegrees(graph):
     
     indegree = dict([(node, 0) for node in graph.keys()])
