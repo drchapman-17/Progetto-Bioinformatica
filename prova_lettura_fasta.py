@@ -1,7 +1,7 @@
 from Bio import SeqIO
 
 def read_fasta():
-   k = 3
+   k = 15
    kmer = []
    for record in SeqIO.parse("prova.fa", "fasta"):
       sequence = str(record.seq) 
