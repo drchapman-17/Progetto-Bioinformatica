@@ -6,9 +6,10 @@ def make_de_bruijn_graph(k_mers_list):
     #and the right (k-1)-mer is obtained by leaving out the first base instead.
     #For instance, given the k-mer 'gatta', the left (k-1)-mer is 'gatt', and 
     #the right (k-1)-mer is 'atta'. 
+
     left_km1_mers = [cpk.Km1Mer(k_mer[:-1]) for k_mer in k_mers_list]
     right_km1_mers = [cpk.Km1Mer(k_mer[1:]) for k_mer in k_mers_list]
-    
+
     '''
     The graph will be represented as a dictionary where each pair represents
     a node: the key will be the label of the node, and the value associated 
