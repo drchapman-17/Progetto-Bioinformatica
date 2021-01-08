@@ -4,10 +4,14 @@ import calcolo_indegree_outdegree as cio
 import prototipo_controllo_connessione as pcc
 import classe_per_km1mero
 import prototipo_controllo_grafo_euleriano as pcge
+import prototipo_percorso_euleriano as ppe
 
-kmer_list = pf.read_fasta()
+kmer_list = pf.read_fasta("prova.fa", 5)
 graph = cg.make_de_bruijn_graph(kmer_list)
-if pcge.isSemiEulerian(graph):
+isSemiEulerian, s = pcge.isSemiEulerian(graph)
+if isSemiEulerian:
     print("E' semi-euleriano")
+    path = ppe.getEulerianPath(graph, s)
+    print([str(node) for node in path])
 else:
     print("Non e' semi-euleriano")

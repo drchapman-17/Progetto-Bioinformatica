@@ -15,13 +15,12 @@ def isSemiEulerian(graph):
 
     nodes = indegree.keys()
     unbalanced_nodes=[(node, outdegree[node] - indegree[node]) for node in nodes if outdegree[node] - indegree[node] !=0]
-
     if len(unbalanced_nodes)==2:
         if (unbalanced_nodes[0][1]==1 and unbalanced_nodes[1][1]==-1) or (unbalanced_nodes[0][1]==-1 and unbalanced_nodes[1][1]==1):
             s = unbalanced_nodes[0][0] if unbalanced_nodes[0][1]==1 else unbalanced_nodes[1][0]
             if not pcc.is_strongly_connected(graph, s):
-                return False
+                return False, s
             else:
-                return True
+                return True, s
     else:
-        return False
+        return False, None
