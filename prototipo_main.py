@@ -12,6 +12,9 @@ isSemiEulerian, s = pcge.isSemiEulerian(graph)
 if isSemiEulerian:
     print("E' semi-euleriano")
     path = ppe.getEulerianPath(graph, s)
-    print([str(node) for node in path])
+    genome_bucket = [str(km1mero)[0] for km1mero in path[0:-1]]
+    genome_bucket.append(str(path[-1]))
+    genome = "".join(genome_bucket)
+    print("Genoma:  "+genome)
 else:
     print("Non e' semi-euleriano")

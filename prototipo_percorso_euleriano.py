@@ -10,9 +10,7 @@ def getEulerianPath(adj, s):
             v = adj[u].pop(0) #prendo il primo elemento
             stack.append(v) #elimino primo elemento lista adj
         else:
-            culo = stack.pop()
-            print("Ho defecato:"+str(culo))
-            path.append(culo)
+            path.append(stack.pop())
     return path[::-1]
             
 
