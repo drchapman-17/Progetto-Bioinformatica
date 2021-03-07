@@ -5,13 +5,13 @@ def isSemiEulerian(graph):
     indegree, outdegree = cio.find_indegrees_and_outdegrees(graph)
 
     for (node, degree) in indegree.items():
-        if((degree-outdegree[node])!=0):
+        #if((degree-outdegree[node])!=0):
             print(node)
             print("diverso da zero")
             print((degree-outdegree[node]))
 
-    for line in [(str(node), [str(anode) for anode in adj]) for node, adj in graph.items()]:
-        print(line)
+    #for line in [(str(node), [str(anode) for anode in adj]) for node, adj in graph.items()]:
+    #    print(line)
 
     nodes = indegree.keys()
     unbalanced_nodes=[(node, outdegree[node] - indegree[node]) for node in nodes if outdegree[node] - indegree[node] !=0]
@@ -19,7 +19,7 @@ def isSemiEulerian(graph):
         if (unbalanced_nodes[0][1]==1 and unbalanced_nodes[1][1]==-1) or (unbalanced_nodes[0][1]==-1 and unbalanced_nodes[1][1]==1):
             s = unbalanced_nodes[0][0] if unbalanced_nodes[0][1]==1 else unbalanced_nodes[1][0]
             if not pcc.is_strongly_connected(graph, s):
-                return False, s
+                return False, None
             else:
                 return True, s
     else:

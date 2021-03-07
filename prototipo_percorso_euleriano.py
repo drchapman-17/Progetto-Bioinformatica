@@ -2,7 +2,7 @@ from collections import deque
 
 def getEulerianPath(adj, s):
     path = []
-    stack =  []
+    stack = []
     stack.append(s)
     while stack:
         u = stack[-1] #leggo ultimo elemento aggiunto
@@ -12,10 +12,3 @@ def getEulerianPath(adj, s):
         else:
             path.append(stack.pop())
     return path[::-1]
-            
-
-
-
-        
-
-

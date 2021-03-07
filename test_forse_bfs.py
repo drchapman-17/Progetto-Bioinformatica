@@ -6,9 +6,10 @@ adj={"1":["2","3"],
      "4":[],
      "5":[],
      "6":[]}
+    
 s="1"
 nodes = [nodes for nodes in adj.keys()]
- 
+
 visited = dict([(node, False) for node in nodes])
 visited[s] = True
 Q = deque()

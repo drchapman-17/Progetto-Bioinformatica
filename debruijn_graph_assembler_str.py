@@ -1,8 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 from Bio import SeqIO
-
+import argparse
 
 def build_debruijn_graph(fasta_fname, k):
     # il grafo sara' rappresentato come una lista di adiacenza; verranno anche mantenute le
@@ -20,6 +17,7 @@ def build_debruijn_graph(fasta_fname, k):
             # Se non esiste un nodo nel grafo per il km1mero destro, questo viene creato con
             # lista di adiacenza nulla. Naturalmente il bilancio del nuovo nodo introdotto non
             # puo' che essere pari a 0.
+            #Setdefault aggiunge chiave a un dizionario con un valore specificato sse la chiave non esiste
             adjacency_list.setdefault(right_km1mer, [])
             nodes_balance.setdefault(right_km1mer, 0)
 
@@ -59,8 +57,8 @@ def check_node_balance_condition(nodes_balance):
                 'il grafo non è semi euleriano essendoci un nodo con bilancio: ' + str(balance)
             )
             return None
-        # se il bilancio è 1, allora abbiamo trovato il nodo di partenza... ma se non è unico
-        # si es|B|lode.
+        # se il bilancio è 1, allora abbiamo trovato il nodo di partenza, ma se non è unico
+        #allora il grafo non è semi euleriano
         elif balance == 1:
             if start_node is None:
                 start_node = node
@@ -91,7 +89,7 @@ def attempt_semi_eulerian_path(adjacency_list, start_node):
     # il percorso dovrà percorrere ogni arco una ed una sola volta
     expected_path_length = sum([len(adjl) for adjl in adjacency_list.values()]) + 1
 
-    # applichiamo l'algoritmo di Hohenzoller (check spelling).
+    # applichiamo l'algoritmo.
     semi_eulerian_path = []
     hohenzoller_stack = []
 
@@ -134,16 +132,23 @@ def extract_genome_assembly(semi_eulerian_path):
 
     return genome_assembly
 
+ap = argparse.ArgumentParser()
+ap.add_argument('-f', '--fastafile', required=True, help='Fasta File')
+ap.add_argument('-k', '--kmer', required=True, help='Kmer Length')
+args = vars(ap.parse_args())
+fasta_fname = args['fastafile']
+kmer_length = int(args['kmer'])
 
-def main_prog(fasta_fname, kmer_length):
-    adjacency_list, nodes_balance = build_debruijn_graph(fasta_fname, kmer_length)
+#adjacency_list = DeBrujinGraph representation
+#nodes_balance = indegree-outdegree for each node
+adjacency_list, nodes_balance = build_debruijn_graph(fasta_fname, kmer_length)
 
-    semi_eulerian_path_start = check_node_balance_condition(nodes_balance)
-    if semi_eulerian_path_start:
-        semi_eulerian_path = (
-            attempt_semi_eulerian_path(adjacency_list, semi_eulerian_path_start)
-        )
-        if semi_eulerian_path:
-            return extract_genome_assembly(semi_eulerian_path)
-        else:
-            return None
+semi_eulerian_path_start = check_node_balance_condition(nodes_balance)
+if semi_eulerian_path_start is not None:
+    semi_eulerian_path = (
+        attempt_semi_eulerian_path(adjacency_list, semi_eulerian_path_start)
+    )
+    if semi_eulerian_path:
+        print(extract_genome_assembly(semi_eulerian_path))
+    else:
+        print(None)

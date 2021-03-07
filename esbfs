@@ -1,0 +1,29 @@
+BFS_BINARIO(G,x,h,k):
+    for v in V:
+        P(v) = nil
+        d(v) = infinito
+    d(x) = 0
+    dmax = 0
+    nodi_interni = 0
+    if (Adj(x)>2) #controllo binario radice
+        return false
+    Enqueue(Q,x)
+    while (not empityqueue(Q)):
+        u = dequeue(Q)
+        if(u == x or length(Adj(u)>1)):
+            nodi_interni++
+        if(adj(u)> 3) #controllo binario
+            return false
+        for v in ADJ(u):
+            if(d(v)==infinito):
+                ENQUEUE(v, Q)
+                P(v) = u
+                d(v) = d(u)+1
+                if d(v) > dmax  #per calcolare altezza albero
+                    dmax = d(v)
+
+    if all d(v) in V != infinito #controlla se è una sola componente connessa
+        if( dmax == k and nodi interni == h) #controlla se rispetta vincoli H e K
+            return true
+    else
+        return false
