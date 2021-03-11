@@ -2,6 +2,8 @@
 
 **Componenti del gruppo: Ciapponi, Colombo, Lucarella**
 
+
+
 **Consegna:**
 Sviluppare un piccolo Assemblatore che, preso come input un file FASTA contenente delle Read e un numeor intero K, costruisca il genoma corrispondente 
 con l'ausilio di un grafo di De Bruijn.
@@ -10,10 +12,14 @@ Il programma deve:
   2. calcolare il grafo di de Bruijn corrispondente
   3. verificare che il grafo sia semi euleriano. In questo caso calcola un cammino euleriano
   4. analizzare il cammino per visualizzare il genoma assemblato
-  
+
+
+
 **Procedura per chiamare il programma da linea di comando:**
 
 **$** python debruijn_graph_assembler.py  -f [file fasta] -k [dimensione kmero]
+  
+  
   
 **Descrizione Funzioni del programma:**
 
