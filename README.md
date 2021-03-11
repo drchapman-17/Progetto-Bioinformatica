@@ -15,24 +15,24 @@ Il programma deve:
   
 **Descrizione Funzioni del programma:**
 
-  1. *build_debruijn_graph(fasta_fname, k)*:
+  1. *build_debruijn_graph*(fasta_fname, k):
       Estrae i kmeri (di dimensione k) dalle read contenute nel file fasta "fasta_fname" e va a coustruire la lista di adiacenza di un grafo di De Bruijn
       calcolando contemporaneamente il bilanciamento di ogni nodo.
       Output: Dizionario che contiene la lista di adiacenza del grafo, Dizionario che associa ogni nodo al suo bilanciamento (Indigree-outdegree).
       
-  2. *check_node_balance_condition(nodes_balance)*:
+  2. *check_node_balance_condition*(nodes_balance):
       Controlla il bilanciamento dei nodi del Grafo costruito per verificare se esistono solo 2 nodi con bilanciamento = +1/-1 e i restanti con bilanciamento 0.
       Questa è una delle proprietà necessarie affinchè il grafo sia semi euleriano.
       La funzione effettua operazioni di conteggio e confronto dei valori dei bilanciamenti dei nodi nel dizionario "nodes_balance".
       Output: nodo iniziale del grafu euleriano.
       
-  3. *attempt_semi_eulerian_path(adjacency_list, start_node)*:
+  3. *attempt_semi_eulerian_path*(adjacency_list, start_node):
       la funzione calcola il cammino euleriano nel grafo utilizzando l'algoritmo di Hierholzer.
       Dopo aver applicato l'algoritmo il numero di nodi attraversqati viene comparato con il numero di nodi attesi (cioè tutti i nodi).
       Nel caso in qui questa comparaziomne abbia esito negativo l'algoritmo si ferma perchè ciò significa che il grafo è formato da più componenti connesse e quindi non 
       è semi-euleriano.
       Output: Lista contenente l'ordine di visita dei nodi (ribaltata).
       
-  4. *extract_genome_assembly(semi_eulerian_path)*:
+  4. *extract_genome_assembly*(semi_eulerian_path):
       Concatena i nodi del cammino in modo da ottenere la stringa che rappresenta il genoma.
       Output: Stringa che rappresenta il genoma.
