@@ -1,4 +1,5 @@
 **Progetto del corso "Elementi di Bioinformatica" Università degli Studi Milano Bicocca anno 2020/2021**
+
 **Componenti del gruppo: Ciapponi, Colombo, Lucarella**
 
 **Consegna:**
@@ -11,6 +12,7 @@ Il programma deve:
   4. analizzare il cammino per visualizzare il genoma assemblato
   
 **Procedura per chiamare il programma da linea di comando:**
+
 **$** python debruijn_graph_assembler.py  -f [file fasta] -k [dimensione kmero]
   
 **Descrizione Funzioni del programma:**
