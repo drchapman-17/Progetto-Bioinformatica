@@ -37,7 +37,7 @@ Il programma deve:
       *Output*: nodo iniziale del grafi euleriano.
       
   3. *attempt_semi_eulerian_path*(adjacency_list, start_node):
-      la funzione calcola il cammino euleriano nel grafo utilizzando l'algoritmo di Hierholzer.
+      la funzione calcola il cammino euleriano nel grafo implementando l'algoritmo di Hierholzer.
       Dopo aver applicato l'algoritmo il numero di nodi attraversqati viene comparato con il numero di nodi attesi (cioè tutti i nodi).
       Nel caso in qui questa comparaziomne abbia esito negativo l'algoritmo si ferma perchè ciò significa che il grafo è formato da più componenti connesse e quindi non 
       è semi-euleriano.
