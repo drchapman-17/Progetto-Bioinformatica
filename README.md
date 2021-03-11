@@ -34,7 +34,7 @@ Il programma deve:
       Questa è una delle proprietà necessarie affinchè il grafo sia semi euleriano.
       La funzione effettua operazioni di conteggio e confronto dei valori dei bilanciamenti dei nodi nel dizionario "nodes_balance".
       
-      *Output*: nodo iniziale del grafu euleriano.
+      *Output*: nodo iniziale del grafi euleriano.
       
   3. *attempt_semi_eulerian_path*(adjacency_list, start_node):
       la funzione calcola il cammino euleriano nel grafo utilizzando l'algoritmo di Hierholzer.
