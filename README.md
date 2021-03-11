@@ -1,7 +1,7 @@
-Progetto del corso "Elementi di Bioinformatica" Università degli Studi Milano Bicocca anno 2020/2021
-Componenti del gruppo: Ciapponi, Colombo, Lucarella
+**Progetto del corso "Elementi di Bioinformatica" Università degli Studi Milano Bicocca anno 2020/2021**
+**Componenti del gruppo: Ciapponi, Colombo, Lucarella**
 
-Consegna:
+**Consegna:**
 Sviluppare un piccolo Assemblatore che, preso come input un file FASTA contenente delle Read e un numeor intero K, costruisca il genoma corrispondente 
 con l'ausilio di un grafo di De Bruijn.
 Il programma deve:
@@ -10,10 +10,10 @@ Il programma deve:
   3. verificare che il grafo sia semi euleriano. In questo caso calcola un cammino euleriano
   4. analizzare il cammino per visualizzare il genoma assemblato
   
-Procedura per chiamare il programma da linea di comando:
-  $ python debruijn_graph_assembler.py  -f [file fasta] -k [dimensione kmero]
+**Procedura per chiamare il programma da linea di comando:**
+**$** python debruijn_graph_assembler.py  -f [file fasta] -k [dimensione kmero]
   
-Descrizione Funzioni del programma:
+**Descrizione Funzioni del programma:**
 
   1. build_debruijn_graph(fasta_fname, k):
       Estrae i kmeri (di dimensione k) dalle read contenute nel file fasta "fasta_fname" e va a coustruire la lista di adiacenza di un grafo di De Bruijn
