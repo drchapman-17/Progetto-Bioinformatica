@@ -32,7 +32,7 @@ Il programma deve:
   2. *check_node_balance_condition*(nodes_balance):
       Controlla il bilanciamento dei nodi del Grafo costruito per verificare se esistono solo 2 nodi con bilanciamento = +1/-1 e i restanti con bilanciamento 0.
       Questa è una delle proprietà necessarie affinchè il grafo sia semi euleriano.
-      La funzione effettua operazioni di conteggio e confronto dei valori di bilanciamento dei nodi nel dizionario "nodes_balance".
+      La funzione effettua operazioni di conteggio e confronto tra i valori di bilanciamento dei nodi nel dizionario "nodes_balance".
       
       *Output*: nodo iniziale del grafi euleriano.
       
