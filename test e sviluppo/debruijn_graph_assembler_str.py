@@ -91,24 +91,24 @@ def attempt_semi_eulerian_path(adjacency_list, start_node):
 
     # applichiamo l'algoritmo.
     semi_eulerian_path = []
-    hohenzoller_stack = []
+    hierholtzer_stack = []
 
     def top(stack):
         return stack[-1]
 
     # manteniamo uno stack con i nodi da visitare; partiamo visitando il nodo con bilancio 1.
-    hohenzoller_stack.append(start_node)
-    while hohenzoller_stack:
+    hierholtzer_stack.append(start_node)
+    while hierholtzer_stack:
         current_node = top(hohenzoller_stack)
         # se la lista degli archi del nodo corrente non e' ancora stata visitata del tutto,
         # attraversiamo uno dei possibili archi e poniamo come prossimo nodo da esaminare
         # quello in cui incide l'arco; poi coloriamo l'arco.
         if adjacency_list[current_node]:
             next_node = adjacency_list[current_node].pop()
-            hohenzoller_stack.append(next_node)
+            hierholtzer_stack.append(next_node)
         # se non ci sono piu' archi da visitare, inseriamo quel nodo all'inizio del cammino.
         else:
-            semi_eulerian_path.append(hohenzoller_stack.pop())
+            semi_eulerian_path.append(hierholtzer_stack.pop())
 
     if len(semi_eulerian_path) == expected_path_length:
         return semi_eulerian_path[::-1]
