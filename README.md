@@ -5,7 +5,7 @@
 
 
 **Consegna:**
-Sviluppare un piccolo Assemblatore che, preso come input un file FASTA contenente delle Read e un numeor intero K, costruisca il genoma corrispondente 
+Sviluppare un piccolo Assemblatore che, preso come input un file FASTA contenente delle Read e un numero intero K, costruisca il genoma corrispondente 
 con l'ausilio di un grafo di De Bruijn.
 Il programma deve:
   1. calcolare tutti k-meri distinti inclusi nelle read
