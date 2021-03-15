@@ -27,7 +27,7 @@ Il programma deve:
       Estrae i kmeri (di dimensione k) dalle read contenute nel file fasta "fasta_fname" e va a costruire la lista di adiacenza di un grafo di De Bruijn
       calcolando contemporaneamente il bilanciamento di ogni nodo.
       
-      *Output*: Dizionario che contiene la lista di adiacenza del grafo, Dizionario che associa ogni nodo al suo bilanciamento (Indigree-outdegree).
+      *Output*: Dizionario che contiene la lista di adiacenza del grafo, Dizionario che associa ogni nodo al suo bilanciamento (Outdegree-Indegree).
       
   2. *check_node_balance_condition*(nodes_balance):
       Controlla il bilanciamento dei nodi del Grafo costruito per verificare se esistono solo 2 nodi con bilanciamento = +1/-1 e i restanti con bilanciamento 0.
