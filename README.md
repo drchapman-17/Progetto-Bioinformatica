@@ -24,7 +24,7 @@ Il programma deve:
 **Descrizione Funzioni del programma:**
 
   1. *build_debruijn_graph*(fasta_fname, k):
-      Estrae i kmeri (di dimensione k) dalle read contenute nel file fasta "fasta_fname" e va a coustruire la lista di adiacenza di un grafo di De Bruijn
+      Estrae i kmeri (di dimensione k) dalle read contenute nel file fasta "fasta_fname" e va a costruire la lista di adiacenza di un grafo di De Bruijn
       calcolando contemporaneamente il bilanciamento di ogni nodo.
       
       *Output*: Dizionario che contiene la lista di adiacenza del grafo, Dizionario che associa ogni nodo al suo bilanciamento (Indigree-outdegree).
